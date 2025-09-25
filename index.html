@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>GuitarPasal - Premium Guitars</title>
-  <meta name="description" content="GuitarPasal: Premium acoustic and electric guitars. Minimal, fast, and accessible shopping experience." />
+  <title>Guitar Pasal - LED Guitar Picks & Accessories</title>
+  <meta name="description" content="Guitar Pasal: Premium LED Guitar Picks and accessories. Play Brighter. Play Better." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://subammmm.github.io/guitarpasal/" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="color-scheme" content="light only" />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="GuitarPasal Home">GuitarPasal</a>
+      <a class="logo" href="index.html" aria-label="Guitar Pasal Home">Guitar Pasal</a>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -39,9 +39,9 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>GuitarPasal</h1>
-          <p class="tagline">Quality Guitars for Every Player</p>
-          <a class="btn btn-primary" href="products.html">Browse Products</a>
+          <h1>Guitar Pasal</h1>
+          <p class="tagline">Play Brighter. Play Better.</p>
+          <a class="btn btn-primary" href="#products">Shop LED Picks</a>
         </div>
         <figure class="hero-media">
           <img
@@ -53,59 +53,87 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="products">
       <div class="container">
-        <h2 class="section-title">Featured Guitars</h2>
+        <h2 class="section-title">Our Products</h2>
         <div class="grid products-grid">
-          <article class="card product">
+          <!-- LED Guitar Picks - Available -->
+          <article class="card product" data-product="led-pick-white">
             <figure class="product-media">
-              <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80&auto=format&fit=crop"
-                   width="800" height="600" alt="Vintage electric guitar in sunburst finish" loading="lazy" decoding="async">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="White LED Guitar Pick" loading="lazy" decoding="async">
             </figure>
             <div class="product-body">
-              <h3 class="product-title">Vintage Electric</h3>
-              <p class="product-desc">Sunburst finish, maple neck, bright tone.</p>
-              <p class="product-price">$799</p>
-              <a class="product-link" href="products.html">View details</a>
+              <h3 class="product-title">LED Guitar Pick - White</h3>
+              <p class="product-desc">Bright white LED illumination for dark stages.</p>
+              <p class="product-price">$19.99</p>
+              <button class="btn btn-primary add-to-cart" data-name="LED Guitar Pick - White" data-price="19.99">Add to Cart</button>
             </div>
           </article>
 
-          <article class="card product">
+          <article class="card product" data-product="led-pick-purple">
             <figure class="product-media">
-              <img src="https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?w=800&q=80&auto=format&fit=crop"
-                   width="800" height="600" alt="Natural acoustic guitar leaning on a chair" loading="lazy" decoding="async">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="Purple LED Guitar Pick" loading="lazy" decoding="async">
             </figure>
             <div class="product-body">
-              <h3 class="product-title">Natural Acoustic</h3>
-              <p class="product-desc">Solid spruce top, warm projection.</p>
-              <p class="product-price">$549</p>
-              <a class="product-link" href="products.html">View details</a>
+              <h3 class="product-title">LED Guitar Pick - Purple</h3>
+              <p class="product-desc">Cool purple glow for unique performances.</p>
+              <p class="product-price">$19.99</p>
+              <button class="btn btn-primary add-to-cart" data-name="LED Guitar Pick - Purple" data-price="19.99">Add to Cart</button>
             </div>
           </article>
 
-          <article class="card product">
+          <article class="card product" data-product="led-pick-green">
             <figure class="product-media">
-              <img src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=800&q=80&auto=format&fit=crop"
-                   width="800" height="600" alt="Close-up of a guitar fretboard" loading="lazy" decoding="async">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="Green LED Guitar Pick" loading="lazy" decoding="async">
             </figure>
             <div class="product-body">
-              <h3 class="product-title">Studio Series</h3>
-              <p class="product-desc">Balanced tone for recording & stage.</p>
-              <p class="product-price">$999</p>
-              <a class="product-link" href="products.html">View details</a>
+              <h3 class="product-title">LED Guitar Pick - Green</h3>
+              <p class="product-desc">Vibrant green light for energetic shows.</p>
+              <p class="product-price">$19.99</p>
+              <button class="btn btn-primary add-to-cart" data-name="LED Guitar Pick - Green" data-price="19.99">Add to Cart</button>
             </div>
           </article>
 
-          <article class="card product">
+          <!-- Accessories - Out of Stock -->
+          <article class="card product out-of-stock">
             <figure class="product-media">
-              <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80&auto=format&fit=crop"
-                   width="800" height="600" alt="Electric guitar on amplifier with cables" loading="lazy" decoding="async">
+              <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c0aa?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="Guitar Strings" loading="lazy" decoding="async">
             </figure>
             <div class="product-body">
-              <h3 class="product-title">Pro Electric</h3>
-              <p class="product-desc">Versatile pickups, sleek profile.</p>
-              <p class="product-price">$1,199</p>
-              <a class="product-link" href="products.html">View details</a>
+              <h3 class="product-title">Premium Guitar Strings</h3>
+              <p class="product-desc">High-quality steel strings for acoustic guitars.</p>
+              <p class="product-price">$12.99</p>
+              <button class="btn btn-secondary" disabled>Out of Stock</button>
+            </div>
+          </article>
+
+          <article class="card product out-of-stock">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="Guitar Strap" loading="lazy" decoding="async">
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Leather Guitar Strap</h3>
+              <p class="product-desc">Comfortable leather strap with adjustable length.</p>
+              <p class="product-price">$24.99</p>
+              <button class="btn btn-secondary" disabled>Out of Stock</button>
+            </div>
+          </article>
+
+          <article class="card product out-of-stock">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop"
+                   width="800" height="600" alt="Guitar Tuner" loading="lazy" decoding="async">
+            </figure>
+            <div class="product-body">
+              <h3 class="product-title">Digital Guitar Tuner</h3>
+              <p class="product-desc">Accurate chromatic tuner with LED display.</p>
+              <p class="product-price">$29.99</p>
+              <button class="btn btn-secondary" disabled>Out of Stock</button>
             </div>
           </article>
         </div>
@@ -114,15 +142,35 @@
 
     <section class="cta section">
       <div class="container cta-inner">
-        <h2>Ready to find your sound?</h2>
-        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+        <h2>Ready to light up your performance?</h2>
+        <button class="btn btn-primary" id="view-cart">View Cart (<span id="cart-count">0</span>)</button>
       </div>
     </section>
   </main>
 
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <p class="empty-cart">Your cart is empty</p>
+      </div>
+      <div class="cart-total">
+        <strong>Total: $<span id="cart-total">0.00</span></strong>
+      </div>
+      <div class="cart-actions">
+        <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+        <button id="clear-cart" class="btn btn-secondary">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> GuitarPasal. All rights reserved.</p>
+      <p>&copy; Guitar Pasal 2025. All rights reserved.</p>
       <nav aria-label="Social">
         <ul class="social-links">
           <li><a href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
