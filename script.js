@@ -1,6 +1,6 @@
 /**
- * Guitar Pasal E-commerce Cart System
- * Handles adding/removing items, cart display, and checkout
+ * Guitar Pasal E-commerce Cart System - Updated for NPR currency and new design
+ * Handles adding/removing items, cart display, and checkout with Nepali payment options
  */
 
 class GuitarPasalCart {
@@ -22,9 +22,9 @@ class GuitarPasalCart {
    * Initialize all event listeners
    */
   initEventListeners() {
-    // Add to cart buttons
+    // Add to cart buttons - updated class name
     document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('add-to-cart')) {
+      if (e.target.classList.contains('btn-add-to-cart')) {
         const name = e.target.getAttribute('data-name');
         const price = parseFloat(e.target.getAttribute('data-price'));
         this.addToCart(name, price);
@@ -34,7 +34,10 @@ class GuitarPasalCart {
     // View cart button
     const viewCartBtn = document.getElementById('view-cart');
     if (viewCartBtn) {
-      viewCartBtn.addEventListener('click', () => this.toggleCart());
+      viewCartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.toggleCart();
+      });
     }
 
     // Close cart button
@@ -66,6 +69,18 @@ class GuitarPasalCart {
         this.toggleCart();
       }
     });
+
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', () => {
+        primaryNav.classList.toggle('open');
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
   }
 
   /**
@@ -150,9 +165,9 @@ class GuitarPasalCart {
       cartCount.textContent = this.getCartCount();
     }
 
-    // Update cart total
+    // Update cart total - NPR currency
     if (cartTotal) {
-      cartTotal.textContent = this.getCartTotal().toFixed(2);
+      cartTotal.textContent = this.getCartTotal().toFixed(0); // No decimals for NPR
     }
 
     // Update cart items
@@ -164,13 +179,13 @@ class GuitarPasalCart {
           <div class="cart-item" data-id="${item.id}">
             <div class="cart-item-info">
               <h4>${item.name}</h4>
-              <p>$${item.price.toFixed(2)} each</p>
+              <p>₨${item.price} each</p>
             </div>
             <div class="cart-item-controls">
               <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
               <span class="quantity">${item.quantity}</span>
               <button class="quantity-btn" onclick="cart.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
-              <button class="quantity-btn" onclick="cart.removeFromCart(${item.id})" style="background: #dc3545; margin-left: 10px;">×</button>
+              <button class="remove-btn" onclick="cart.removeFromCart(${item.id})">×</button>
             </div>
           </div>
         `).join('');
@@ -190,7 +205,7 @@ class GuitarPasalCart {
   }
 
   /**
-   * Process checkout
+   * Process checkout with Nepali payment options
    */
   checkout() {
     if (this.cart.length === 0) {
@@ -198,11 +213,67 @@ class GuitarPasalCart {
       return;
     }
 
-    const total = this.getCartTotal().toFixed(2);
+    const total = this.getCartTotal();
     const itemCount = this.getCartCount();
     
-    // Show checkout confirmation
-    alert(`Thank you for shopping at Guitar Pasal!\n\nOrder Summary:\n- ${itemCount} item(s)\n- Total: $${total}\n\nYour LED guitar picks will light up your next performance!`);
+    // Show checkout options
+    const paymentMethod = prompt(`Order Summary:
+- ${itemCount} item(s)
+- Total: ₨${total}
+
+Choose payment method:
+1. eSewa
+2. Khalti  
+3. QR Bank Transfer
+
+Enter 1, 2, or 3:`);
+
+    switch(paymentMethod) {
+      case '1':
+        this.processESewa(total);
+        break;
+      case '2':
+        this.processKhalti(total);
+        break;
+      case '3':
+        this.processQRPayment(total);
+        break;
+      default:
+        alert('Invalid payment method selected.');
+        return;
+    }
+  }
+
+  /**
+   * Process eSewa payment
+   */
+  processESewa(total) {
+    alert(`Redirecting to eSewa for payment of ₨${total}...\n\nNote: This is a demo. In production, this would redirect to eSewa gateway.`);
+    this.completeOrder();
+  }
+
+  /**
+   * Process Khalti payment  
+   */
+  processKhalti(total) {
+    alert(`Initializing Khalti payment for ₨${total}...\n\nNote: This is a demo. In production, this would use Khalti SDK.`);
+    this.completeOrder();
+  }
+
+  /**
+   * Process QR bank payment
+   */
+  processQRPayment(total) {
+    const qrData = `Bank: Nabil Bank\nAccount: 0123456789\nAmount: ₨${total}\nReference: GP${Date.now()}`;
+    alert(`QR Payment Details:\n\n${qrData}\n\nScan the QR code to complete payment.\n\nNote: This is a demo. In production, a QR code would be generated.`);
+    this.completeOrder();
+  }
+
+  /**
+   * Complete order after successful payment
+   */
+  completeOrder() {
+    alert(`Thank you for shopping at Guitar Pasal!\n\nYour LED guitar picks will be shipped within 2-3 business days.\n\nOrder confirmation will be sent to your email.`);
     
     // Clear cart after successful checkout
     this.clearCart();
