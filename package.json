@@ -1,0 +1,26 @@
+{
+  "name": "guitarpasal",
+  "version": "1.0.0",
+  "description": "LED Guitar Picks E-commerce Shop from Nepal",
+  "main": "script.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "keywords": ["guitar", "picks", "LED", "Nepal", "e-commerce"],
+  "author": "Guitar Pasal",
+  "license": "ISC",
+  "dependencies": {
+    "framer-motion": "^12.23.22",
+    "khalti-checkout-web": "^2.2.0",
+    "neppayments": "^2.0.6",
+    "next": "^15.5.4",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.4"
+  }
+}
